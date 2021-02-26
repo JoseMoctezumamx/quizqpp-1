@@ -1,0 +1,50 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Examen</mat-card-title>
+    <mat-card-subtitle>Responde las preguntes</mat-card-subtitle>
+  </mat-card-header>
+  
+  <mat-card-content>
+      <section>
+
+      </section>
+      <section>
+        <!--PREGUNTAS-->
+        {{preguntaActual.questionText}}
+      </section>
+      <section>
+        <!--RESPUESTAS-->
+        <form>
+          <mat-radio-group
+            (change) = "radioChange($event.value)">
+            <mat-radio-button
+              class    = "respuesta-radio-group" 
+              *ngFor   = "let respuesta of preguntaActual.options"
+              [value]  = "respuesta.optionValue"
+              [checked]= "false">
+              {{respuesta.optionText}}
+            </mat-radio-button>
+          </mat-radio-group>
+        </form>
+      </section>
+
+  </mat-card-content>
+
+  <mat-card-footer>
+    <section>
+      <mat-card-actions>
+        <button 
+          *ngIf="siguienteB"
+          [disabled]="disabled"
+          (click)="siguiente()">
+          Siguiente
+        </button>
+        <button 
+          *ngIf="!siguienteB"
+          (click)="finalizar()">
+          Finalizar
+        </button>
+      </mat-card-actions>
+    </section>
+  </mat-card-footer>
+</mat-card>

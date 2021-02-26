@@ -1,0 +1,51 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>CUESTIONARIO CACE</mat-card-title>
+      <mat-card-subtitle><h2>Result</h2></mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+        <section class="resultados">
+          
+          <section class="estadisticas">
+            <h3>Estadisticas</h3>
+            <span>Tu puntaje:</span>
+            <span>Completaste el cuestionario en 30 minutos y 23 segundos</span>
+          </section>
+          
+          <section class="preguntasResumen">
+            <details>
+              <summary>Observa a mas detalle el resumen de preguntas</summary>
+              <mat-accordion>
+                <mat-expansion-panel *ngFor="let pregunta of allQuestions">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                     {{pregunta.questionId}}. {{pregunta.questionText}}
+                    </mat-panel-title>
+                    <mat-panel-description>
+                      {{pregunta.selectedOption}}
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+                    <mat-list role="respuestas">
+                      <mat-list-item
+                        *ngFor="let respuesta of pregunta.options" 
+                        role="listitem">
+                        <div class ="correcta" *ngIf="respuesta.optionValue === pregunta.answer">
+                          {{respuesta.optionValue}}. {{respuesta.optionText}}
+                        </div>
+                        <div class="incorrecto" *ngIf="respuesta.optionValue === pregunta.selectedOption && respuesta.optionValue != pregunta.answer">
+                          {{respuesta.optionValue}}. {{respuesta.optionText}}
+                        </div>
+                        <div  *ngIf="respuesta.optionValue != pregunta.answer && respuesta.optionValue != pregunta.selectedOption ">
+                          {{respuesta.optionValue}}. {{respuesta.optionText}}
+                        </div>
+                      </mat-list-item>
+                    </mat-list>
+                </mat-expansion-panel>
+              </mat-accordion>
+            </details>
+          </section>
+        </section>
+
+    </mat-card-content>
+</mat-card>
