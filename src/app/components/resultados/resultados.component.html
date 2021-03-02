@@ -9,8 +9,8 @@
           
           <section class="estadisticas">
             <h3>Estadisticas</h3>
-            <span>Tu puntaje:</span>
-            <span>Completaste el cuestionario en 30 minutos y 23 segundos</span>
+            <span>Tu puntaje:{{calificacion}}</span>
+            
           </section>
           
           <section class="preguntasResumen">
@@ -48,4 +48,11 @@
         </section>
 
     </mat-card-content>
+    <mat-card-footer>
+     <section>
+      <mat-card-actions>
+        <button (click)="terminar()">Terminar</button>
+      </mat-card-actions>
+     </section>
+    </mat-card-footer>
 </mat-card>

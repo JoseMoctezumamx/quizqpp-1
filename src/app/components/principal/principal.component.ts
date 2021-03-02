@@ -11,9 +11,12 @@ export class PrincipalComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
+    sessionStorage.clear();
   }
 
   empesarQuestionario(){
+    
+    sessionStorage.setItem("questionID","1");
     this.router.navigateByUrl('/questionario');
   }
 

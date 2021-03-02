@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { QuizPreguntas } from '../../model/QuizPreguntas';
 import { Router } from '@angular/router';
+import {ProgressBarMode} from '@angular/material/progress-bar';
+import {ThemePalette} from '@angular/material/core';
 
 
 @Component({
@@ -14,6 +16,8 @@ export class QuestionarioComponent implements OnInit {
   questionID = 0;
   disabled:   boolean = true;
   siguienteB: boolean = true;
+  color: ThemePalette = 'primary';
+  mode: ProgressBarMode = 'determinate';
 
   allQuestions: QuizPreguntas[] = [
     {
@@ -72,11 +76,22 @@ export class QuestionarioComponent implements OnInit {
   ];
 
   constructor(private router: Router) { 
-    this.setQuestionID(1);
-    this.preguntaActual = this.getPreguntaActual;
+    
   }
 
   ngOnInit() {
+    let questionIDSS = sessionStorage.getItem("questionID");
+    let allQuestionsSS =  sessionStorage.getItem("allQuestions");
+    console.log(questionIDSS);
+    if(questionIDSS === null){
+      this.router.navigateByUrl('/principal');
+    }
+    if(allQuestionsSS != null){
+      this.allQuestions = JSON.parse(allQuestionsSS);
+    }
+    this.questionID = parseInt(questionIDSS);
+    this.setQuestionID(this.questionID);
+    this.preguntaActual = this.getPreguntaActual;
   }
 
   setQuestionID(id: number) {
@@ -106,11 +121,17 @@ export class QuestionarioComponent implements OnInit {
       this.setQuestionID(this.questionID + 1);
       this.preguntaActual = this.getPreguntaActual;
     }
+    sessionStorage.setItem("questionID",this.questionID.toString());
+    sessionStorage.setItem("allQuestions",JSON.stringify(this.allQuestions));
   }
 
   finalizar(){
     console.log(this.allQuestions);
+    sessionStorage.setItem("allQuestions",JSON.stringify(this.allQuestions));
+    sessionStorage.setItem("questionID","1");
+    sessionStorage.setItem("finalizado","true");
     this.router.navigateByUrl('/resultados');
+
   }
 
 }

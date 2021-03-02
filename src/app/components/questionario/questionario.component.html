@@ -2,6 +2,16 @@
   <mat-card-header>
     <mat-card-title>Examen</mat-card-title>
     <mat-card-subtitle>Responde las preguntes</mat-card-subtitle>
+    <mat-card-actions>
+      <section class="section">
+        <mat-progress-bar 
+          class="margin"
+          [mode]="mode"
+          color="primary"
+          [value]="questionID"
+          bufferValue=70></mat-progress-bar>
+      </section>
+    </mat-card-actions>
   </mat-card-header>
   
   <mat-card-content>
@@ -10,6 +20,7 @@
       </section>
       <section>
         <!--PREGUNTAS-->
+        {{preguntaActual.questionId}}
         {{preguntaActual.questionText}}
       </section>
       <section>

@@ -10,6 +10,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatRadioModule, MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 //COMPONENTES
 import { PrincipalComponent } from './components/principal/principal.component';
@@ -31,7 +32,8 @@ import { ResultadosComponent } from './components/resultados/resultados.componen
     MatCardModule,
     MatRadioModule,
     MatExpansionModule,
-    MatListModule
+    MatListModule,
+    MatProgressBarModule
   ],
   providers: [{
     provide: MAT_RADIO_DEFAULT_OPTIONS,
