@@ -1,22 +1,29 @@
-<mat-card>
-  <mat-card-header>
-    <section>
-      <div mat-card-avatar class="header-image"></div>
-      <div class="mat-card-container">
-        <mat-card-title>Bienvenido al examen de simulacion CACE</mat-card-title>
-        <mat-card-subtitle>
-          <span class="subtitle1">Que tan preparado estas?</span>
-          <span class="subtitle2">Toma el Examen y Averigualo!</span>
-        </mat-card-subtitle>
-      </div>
-    </section>
-  </mat-card-header>
-  <mat-card-content>
-    <p>El examen consta de 200 preguntas las cuales tendra que responder una a una, si no seleccionas 
-      una respuesta a la pregunta no podras avanzar a la siguiente, al final se presentara tu resultado.
-      Si tienes alguna duda pregunta a tu asesor.  Buena Suerte!</p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button type="button" disableRipple="false" (click)="empesarQuestionario()">Empezar Examen!</button>
-  </mat-card-actions>
-</mat-card>
+<div class="container">
+  <div class="row align-items-center">
+    <div class="col-12">
+      <mat-card>
+        <mat-card-header>
+          <section>
+            <div mat-card-avatar class="header-image"></div>
+            <div class="mat-card-container">
+              <mat-card-title>Bienvenido al examen de simulacion CACE</mat-card-title>
+              <mat-card-subtitle>
+                <span class="subtitle1">Que tan preparado estas?</span>
+                <span class="subtitle2">Toma el Examen y Averigualo!</span>
+              </mat-card-subtitle>
+            </div>
+          </section>
+        </mat-card-header>
+        <mat-card-content>
+          <p>El examen consta de 200 preguntas las cuales tendra que responder una a una, si no seleccionas
+            una respuesta a la pregunta no podras avanzar a la siguiente, al final se presentara tu resultado.
+            Si tienes alguna duda pregunta a tu asesor. Buena Suerte!</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button type="button" class="" disableRipple="false" (click)="empesarQuestionario()">Empezar
+            Examen!</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
