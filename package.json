@@ -1,5 +1,5 @@
 {
-  "name": "cace-quiz",
+  "name": "cace-quiz-v1",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -21,6 +21,7 @@
     "@angular/platform-browser": "~10.0.14",
     "@angular/platform-browser-dynamic": "~10.0.14",
     "@angular/router": "~10.0.14",
+    "ng-katex": "^2.0.3",
     "bootstrap": "^4.4.1",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",

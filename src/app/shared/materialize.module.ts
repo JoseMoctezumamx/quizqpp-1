@@ -19,7 +19,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSelectModule} from '@angular/material/select';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatRadioModule} from '@angular/material/radio';
+import {MatRadioModule, MAT_RADIO_DEFAULT_OPTIONS} from '@angular/material/radio';
 import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
@@ -68,6 +68,10 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatCheckboxModule,
     MatRadioModule,
     MatExpansionModule
-  ]
+  ],
+  providers: [{
+    provide: MAT_RADIO_DEFAULT_OPTIONS,
+    useValue: { color: 'accent' },
+  }],
 })
 export class MaterializeModule { }

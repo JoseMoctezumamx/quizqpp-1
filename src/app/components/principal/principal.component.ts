@@ -20,4 +20,8 @@ export class PrincipalComponent implements OnInit {
     this.router.navigateByUrl('/questionario');
   }
 
+  altaUsuario(){
+    this.router.navigateByUrl('/userDetails');
+  }
+
 }
