@@ -45,12 +45,14 @@
     <section>
       <mat-card-actions>
         <button 
+          mat-raised-button
           *ngIf="siguienteB"
           [disabled]="disabled"
           (click)="siguiente()">
           Siguiente
         </button>
         <button 
+          mat-raised-button
           *ngIf="!siguienteB"
           (click)="finalizar()">
           Finalizar

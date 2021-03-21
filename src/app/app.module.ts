@@ -5,12 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-//ANGULAR
-import { MatCardModule } from '@angular/material/card';
-import { MatRadioModule, MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatListModule } from '@angular/material/list';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
+//ANGULAR module
+import { MaterializeModule } from './shared/materialize.module';
+
 
 //COMPONENTES
 import { PrincipalComponent } from './components/principal/principal.component';
@@ -29,16 +26,9 @@ import { ResultadosComponent } from './components/resultados/resultados.componen
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatCardModule,
-    MatRadioModule,
-    MatExpansionModule,
-    MatListModule,
-    MatProgressBarModule
+    MaterializeModule
   ],
-  providers: [{
-    provide: MAT_RADIO_DEFAULT_OPTIONS,
-    useValue: { color: 'accent' },
-  }],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
