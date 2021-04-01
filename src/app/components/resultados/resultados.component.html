@@ -20,7 +20,8 @@
                 <mat-expansion-panel *ngFor="let pregunta of allQuestions">
                   <mat-expansion-panel-header>
                     <mat-panel-title>
-                     {{pregunta.questionId}}. {{pregunta.questionText}}
+                     {{pregunta.questionId}}.
+                     <ng-katex-paragraph [paragraph]="pregunta.questionText"></ng-katex-paragraph>  
                     </mat-panel-title>
                     <mat-panel-description>
                       {{pregunta.selectedOption}}
@@ -31,13 +32,16 @@
                         *ngFor="let respuesta of pregunta.options" 
                         role="listitem">
                         <div class ="correcta" *ngIf="respuesta.optionValue === pregunta.answer">
-                          {{respuesta.optionValue}}. {{respuesta.optionText}}
+                          {{respuesta.optionValue}}.
+                          <ng-katex-paragraph [paragraph]="respuesta.optionText"></ng-katex-paragraph> 
                         </div>
                         <div class="incorrecto" *ngIf="respuesta.optionValue === pregunta.selectedOption && respuesta.optionValue != pregunta.answer">
-                          {{respuesta.optionValue}}. {{respuesta.optionText}}
+                          {{respuesta.optionValue}}.
+                          <ng-katex-paragraph [paragraph]="respuesta.optionText"></ng-katex-paragraph> 
                         </div>
                         <div  *ngIf="respuesta.optionValue != pregunta.answer && respuesta.optionValue != pregunta.selectedOption ">
-                          {{respuesta.optionValue}}. {{respuesta.optionText}}
+                          {{respuesta.optionValue}}. 
+                          <ng-katex-paragraph [paragraph]="respuesta.optionText"></ng-katex-paragraph> 
                         </div>
                       </mat-list-item>
                     </mat-list>

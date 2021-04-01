@@ -9,6 +9,7 @@
 @import '~bootstrap/scss/reboot';
 @import "~bootstrap/scss/grid"; // add the grid
 @import "./assets/css/reset";
+@import '~katex/dist/katex.css';
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

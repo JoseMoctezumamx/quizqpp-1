@@ -3,6 +3,7 @@ import { QuizPreguntas } from '../../model/QuizPreguntas';
 import { Router } from '@angular/router';
 import {ProgressBarMode} from '@angular/material/progress-bar';
 import {ThemePalette} from '@angular/material/core';
+import { QuestionarioService } from './questionario.service';
 
 
 @Component({
@@ -28,7 +29,7 @@ export class QuestionarioComponent implements OnInit {
         { optionValue: '2', optionText: 'Cuidado' },
         { optionValue: '3', optionText: 'Acusación' },
         { optionValue: '4', optionText: 'Discreción' },
-        { optionValue: '5', optionText: 'Omisión' }
+        { optionValue: '5', optionText: '$c = \\pm\\sqrt\\{a^2 + b^2\\}$' }
       ],
       answer: '1',
       explanation: 'a service gets passed to the client during DI',
@@ -116,6 +117,7 @@ export class QuestionarioComponent implements OnInit {
       this.siguienteB = false;
       this.setQuestionID(this.questionID + 1);
       this.preguntaActual = this.getPreguntaActual;
+      this.disabled = true;
     }else{
       this.disabled = true;
       this.setQuestionID(this.questionID + 1);

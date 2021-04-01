@@ -16,14 +16,14 @@
   
   <mat-card-content>
       <section>
-
       </section>
-      <section>
+ 
+      <section  *ngIf = "preguntaActual">
         <!--PREGUNTAS-->
         {{preguntaActual.questionId}}
-        {{preguntaActual.questionText}}
+        <ng-katex-paragraph [paragraph]="preguntaActual.questionText"></ng-katex-paragraph>
       </section>
-      <section>
+      <section *ngIf = "preguntaActual">
         <!--RESPUESTAS-->
         <form>
           <mat-radio-group
@@ -33,7 +33,7 @@
               *ngFor   = "let respuesta of preguntaActual.options"
               [value]  = "respuesta.optionValue"
               [checked]= "false">
-              {{respuesta.optionText}}
+              <ng-katex-paragraph [paragraph]="respuesta.optionText"></ng-katex-paragraph>
             </mat-radio-button>
           </mat-radio-group>
         </form>
@@ -54,6 +54,7 @@
         <button 
           mat-raised-button
           *ngIf="!siguienteB"
+          [disabled]="disabled"
           (click)="finalizar()">
           Finalizar
         </button>
